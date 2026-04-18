@@ -1,23 +1,23 @@
-# Leaving SetApp
+# Leaving Setapp
 
-I’ve been using SetApp for nearly a decade, almost as long as it has existed. 
-At the time, I was doing freelance work and having access to a growing collection of tools for a set monthly fee was revelatory. 
-I’ll admit, there’s also the allure of having shiny new apps to try out whenever I wanted. 
-Over the years, its library expanded and the subscription became even more worthwhile. 
+I’ve been using Setapp for nearly a decade, almost as long as it has existed. 
+At the time, I was doing freelance work, and having access to a growing collection of tools for a set monthly fee was revelatory. 
+I’ll admit, there’s also the allure of having shiny new apps to try out whenever I want. 
+Over the years, its library expanded, and the subscription became even more worthwhile. 
 I even talked an employer into subscribing so I could use it at work.
 
 Eventually, I settled into a pretty stable collection of tools, and I got to wondering if it was still worth it. 
-A few years ago, as the annual subscription renewal approached, I started looking for apps to replace what SetApp offered that I still relied on. 
+A few years ago, as the annual subscription renewal approached, I started looking for apps to replace what Setapp offered that I still relied on. 
 I always ended up concluding that it was still worthwhile. Until this year.
 
 It wasn’t easy; a few apps are too specific to have viable replacements, and some really great alternatives are obscure. 
-If you’re a Mac user looking to move away from SetApp, maybe the list I spent years assembling will help you. 
+If you’re a Mac user looking to move away from Setapp, maybe the list I spent years assembling will help you. 
 
 Below is the list of apps I was using, what I’ve found to replace each, and a few I just couldn't part with. I'm including a link for each app, as well as the Homebrew command if one is available (Homebrew deserves another article entirely, if you know you know).
 
 ## Worth Simply Buying
 
-To kick things off, three of the SetApp apps I used regularly were just so good, or so-one-of-a-kind, that I went ahead and bought them.
+To kick things off, three of the Setapp apps I used regularly were just so good, or so one-of-a-kind, that I went ahead and bought them.
 
 ### [Antinote](https://antinote.io/)—$5
 
@@ -58,7 +58,7 @@ brew install --cask srimanachanta/tap/stasis
 
 ## Bartender = [iBar Pro](https://apps.apple.com/us/app/ibar-pro-menubar-control-tool/id6737150304)—$10
 
-Even before deciding to cancel SetApp, I was looking for a replacement for Bartender. 
+Even before deciding to cancel Setapp, I was looking for a replacement for Bartender. 
 Beyond some valid privacy concerns with its new owners, updates have stalled. 
 It still isn’t entirely compatible with Tahoe; when it wasn’t crashing, icons would shift around randomly and sometimes just disappear. 
 
@@ -96,8 +96,8 @@ brew install --cask rectangle
 ## CleanMyMac = [Mole](https://github.com/tw93/Mole) & [Pear Cleaner](https://itsalin.com/appInfo/?id=pearcleaner)—Free (open source)
 
 CleanMyMac has long been one of the first apps I install on a new machine. 
-The problem is, without SetApp, CleanMyMac would cost $16 a month or nearly $200 one-time (for the Pro version with all the features). 
-This app alone kept me on SetApp long after I’d started to doubt its continued value. 
+The problem is, without Setapp, CleanMyMac would cost $16 a month or nearly $200 one-time (for the Pro version with all the features). 
+This app alone kept me on Setapp long after I’d started to doubt its continued value. 
 I was ready to give up again when I found **Mole**.
 
 **Mole** is a command-line (CLI) tool for keeping your Mac running smoothly. 
@@ -132,7 +132,7 @@ brew install --cask shottr
 
 ## CodeRunner = [CotEditor](https://coteditor.com/)—Free (open source)
 
-Honestly, most of Coderunner’s features were wasted on me. 
+Honestly, most of CodeRunner’s features were wasted on me. 
 I’m not a coder, but I do dabble in writing and editing scripts and various markup languages, and CodeRunner was a convenient tool to have in my utility belt. 
 
 **CotEditor** is everything I actually need in a far more attractive and user-friendly package. 
@@ -185,7 +185,7 @@ Only Switch is pretty much a clone of One Switch.
 I haven’t noticed any tradeoff or functional difference from switching.
 
 ```
-brew install --cask one-switch
+brew install --cask only-switch
 ```
 
 ## Paste = [Maccy](https://maccy.org/)—Free (Open Source)
@@ -225,7 +225,7 @@ The flexibility of a dedicated text expander app makes it far superior to macOS�
 First, there’s no iOS support. 
 Second, you have to edit YML files to change or add expansions. 
 And finally, it lacks some of the more advanced options like pop-up windows for filling in blanks. 
-The tradeoff is it’s lightning-fast and light on resources. 
+The tradeoff is that it’s lightning-fast and light on resources. 
 And free.
 
 ```
@@ -243,7 +243,7 @@ In all honesty, neither of my suggestions is quite as nice—but both are great 
 It puts the macOS system color picker in the menu bar and adds some useful features to support use by devs and designers.
 
 **Pika** is interesting in that it allows you to pick two colors and view them next to each other. 
-It doesn’t have some of the niceties of other options, but it’s free and immediately comparing colors right in the window is surprisingly useful.
+It doesn’t have some of the niceties of other options, but it’s free, and being able to compare colors side by side in the window is surprisingly useful.
 
 ```
 brew install --cask pika
@@ -262,7 +262,7 @@ brew install --cask ente-auth
 ## [Raycast](https://www.raycast.com/)—Free, $8/mo Pro
 
 I had to include an honorable mention for Raycast, which is a lot like Spotlight, except that it's extensible.
-It has window and clipboard management built in, and offers plugins for damn near anything you can think of. 
+It has window and clipboard management built in, and offers plugins for darn near anything you can think of. 
 I find it a bit fiddly—I always struggle to remember the right commands or shortcut keys—but many people swear by it. 
 The free tier is enough for most.
 
@@ -275,4 +275,4 @@ brew install --cask raycast
 And that's my list. 
 Did I miss any better options?
 If so, please let me know in the comments.
-I'm always on the look out for better tools.
+I'm always on the lookout for better tools.
