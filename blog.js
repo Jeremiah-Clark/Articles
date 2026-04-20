@@ -32,7 +32,9 @@
     text = text.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g,
       function (_, alt, url) { return '<img src="' + url + '" alt="' + escapeHtml(alt) + '">'; });
     text = text.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,
-      function (_, t, url) { return '<a href="' + url + '">' + t + '</a>'; });
+      function (_, t, url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + t + '</a>';
+      });
     text = text.replace(/`([^`]+)`/g, function (_, code) {
       return '<code>' + escapeHtml(code) + '</code>';
     });
