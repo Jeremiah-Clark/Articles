@@ -6,6 +6,7 @@
   var GH_REPO   = "Articles";
   var GH_BRANCH = "main";
   var POSTS_DIR = "blog";
+  var MOBILE_MQ = "(max-width: 736px)"; // matches Carrd's mobile breakpoint
 
   var statusEl    = document.getElementById("blog-status");
   var containerEl = document.getElementById("blog-container");
@@ -139,9 +140,24 @@
     var el = document.createElement("article");
     el.className = "blog-post";
     el.innerHTML =
-      '<h2 class="blog-title">' + escapeHtml(parsed.title) + '</h2>' +
+      '<h2 class="blog-title">' +
+        '<button class="blog-title-toggle" type="button" aria-expanded="true">' +
+          '<span class="blog-title-text">' + escapeHtml(parsed.title) + '</span>' +
+          '<span class="blog-toggle-icon" aria-hidden="true">▸</span>' +
+        '</button>' +
+      '</h2>' +
       (parsed.date ? '<p class="blog-date">' + escapeHtml(formatDate(parsed.date)) + '</p>' : '') +
-      '<div>' + mdToHtml(parsed.body) + '</div>';
+      '<div class="blog-body">' + mdToHtml(parsed.body) + '</div>';
+
+    var btn = el.querySelector('.blog-title-toggle');
+    btn.addEventListener('click', function () {
+      var expanded = el.classList.toggle('expanded');
+      // aria-expanded is only meaningful on mobile where collapse is active;
+      // on desktop the article is always visible regardless of class.
+      var isMobile = window.matchMedia(MOBILE_MQ).matches;
+      btn.setAttribute('aria-expanded', String(!isMobile || expanded));
+    });
+
     return el;
   }
 
