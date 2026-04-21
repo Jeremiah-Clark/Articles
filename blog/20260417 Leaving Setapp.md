@@ -1,6 +1,5 @@
 ---
-title: Leaving Setapp—23 Alternatives & 3 Holdouts
-date: 2026-04-17
+date: 2026-04-20
 slug: leaving-setapp
 ---
 
