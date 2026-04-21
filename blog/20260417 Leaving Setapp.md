@@ -1,3 +1,9 @@
+---
+title: Leaving Setapp—23 Alternatives & 3 Holdouts
+date: 2026-04-17
+slug: leaving-setapp
+---
+
 # Leaving Setapp—23 Alternatives & 3 Holdouts
 
 I’ve been using Setapp for nearly a decade, almost as long as it has existed. 
