@@ -6,6 +6,11 @@
   var POSTS_DIR = "blog";
   var EXCERPT_BLOCKS = 3; // number of content blocks to show in list view
 
+  // Base URL where relative image/asset paths are resolved against.
+  // Posts live in /blog, so a path like ../images/foo.png from a post
+  // resolves to https://.../Articles@main/images/foo.png
+  var ASSET_BASE = "https://cdn.jsdelivr.net/gh/" + GH_USER + "/" + GH_REPO + "@" + GH_BRANCH + "/" + POSTS_DIR + "/";
+
   var statusEl    = document.getElementById("blog-status");
   var containerEl = document.getElementById("blog-container");
 
@@ -48,14 +53,32 @@
     return "?post=" + encodeURIComponent(slug) + "#blog";
   }
 
+  // Resolve a relative URL against the post's base location in the repo.
+  // Absolute URLs (http://, https://, //, data:) are passed through unchanged.
+  // Anchor links (#foo) and absolute repo paths (/foo) are also passed through.
+  function resolveAssetUrl(url) {
+    if (!url) return url;
+    if (/^([a-z]+:)?\/\//i.test(url)) return url; // http://, https://, //
+    if (/^(data|mailto|tel):/i.test(url)) return url;
+    if (url.charAt(0) === '#') return url;
+    if (url.charAt(0) === '/') return url;
+    try {
+      return new URL(url, ASSET_BASE).href;
+    } catch (e) {
+      return url;
+    }
+  }
+
   // ---------- markdown rendering ----------
 
   function renderInline(text) {
     text = text.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g,
-      function (_, alt, url) { return '<img src="' + url + '" alt="' + escapeHtml(alt) + '">'; });
+      function (_, alt, url) {
+        return '<img src="' + escapeHtml(resolveAssetUrl(url)) + '" alt="' + escapeHtml(alt) + '" loading="lazy">';
+      });
     text = text.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,
       function (_, t, url) {
-        return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + t + '</a>';
+        return '<a href="' + escapeHtml(resolveAssetUrl(url)) + '" target="_blank" rel="noopener noreferrer">' + t + '</a>';
       });
     text = text.replace(/`([^`]+)`/g, function (_, code) {
       return '<code>' + escapeHtml(code) + '</code>';
@@ -153,7 +176,6 @@
       if (m) date = m[1] + "-" + m[2] + "-" + m[3];
     }
     if (!slug) {
-      // Derive from filename: strip extension and leading date
       var base = filename.replace(/\.md$/i, "").replace(/^\d{4}-?\d{2}-?\d{2}\s*/, "");
       slug = slugify(base);
     } else {
@@ -163,8 +185,7 @@
   }
 
   // ---------- excerpt truncation ----------
-  // "Smart" cutoff: counts substantive content blocks (paragraphs, lists,
-  // quotes, code blocks) but not headings. Stops after EXCERPT_BLOCKS blocks.
+
   function truncateHtml(html) {
     var tmp = document.createElement('div');
     tmp.innerHTML = html;
@@ -249,7 +270,6 @@
       document.title = postsBySlug[slug].title + ' — ' + originalTitle;
     } else {
       if (slug) {
-        // Unknown slug — quietly clear it from URL
         console.warn('[blog] unknown slug:', slug);
         history.replaceState(null, '', location.pathname + '#blog');
       }
@@ -275,7 +295,6 @@
   }
 
   function handleContainerClick(e) {
-    // Let ctrl/cmd-click, middle-click, etc. go through as normal
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
 
     var permalink = e.target.closest ? e.target.closest('a[data-permalink]') : null;
