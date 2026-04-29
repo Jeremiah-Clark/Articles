@@ -136,16 +136,16 @@ brew list
 Update all installed packages, and Homebrew itself:
 
 ```
- brew update   #Checks for available updates
- brew outdated #Lists packages that have updates (optional)
- brew upgrade  #Installs all available updates
+ brew update   #Checks for updates
+ brew outdated #Lists updates (optional)
+ brew upgrade  #Installs updates
 ```
 
 Update a single package:
 
 ```
- brew update            #Checks for available updates
- brew upgrade [package] #Installs only the update specified
+ brew update 
+ brew upgrade [package]
 ```
 
 Some casks have internal update systems and/or show “latest” to Homebrew instead of a version number (for example, Chrome or Firefox), so Homebrew does not know to update them. If you want to, you can force the upgrade:
