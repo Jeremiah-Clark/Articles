@@ -82,6 +82,7 @@ brew install [package]
 “Cask” is an extension of the base Homebrew that allows it to handle graphical macOS apps. 
 Packages handled by Cask are referred to as “casks.” 
 For the average user, most installed packages will be casks.
+Installing a cask requires adding a `--cask` flag to the command:
 
 ```
 brew install --cask [package]
@@ -91,11 +92,13 @@ brew install --cask [package]
 
 A “Tap” is a third-party repository referenced by Homebrew. 
 To install from a Tap, you need to add it as a reference. 
-Taps can house all types of packages, including formulae and casks.
+Taps can house all types of packages, including formulae:
 
 ```
 brew install [user]/[repo]/[package]
 ```
+
+Or casks:
 
 ```
 brew install --cask [user]/[repo]/[package]
