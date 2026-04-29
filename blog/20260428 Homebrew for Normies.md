@@ -43,10 +43,11 @@ Type your user password (the one you use to log in to macOS), and hit return.
 
 ![Terminal-Homebrew-Command](../images/Terminal-Homebrew-Command.png)
 
+![Terminal-Password](../images/Terminal-Password.png)
+
 > [TIP]
 >
 > When the Terminal shows that little key in the cursor, typing won't appear to do anything. This is a security feature to prevent snooping when typing a password. Just type your password and hit return.
-> ![Terminal-Password](../images/Terminal-Password.png)
 
 ![Terminal-Homebrew-Install](../images/Terminal-Homebrew-Install.png)
 
@@ -80,7 +81,9 @@ These are commonly utilities and libraries, most often originating on Linux or U
 Packages handled by Cask are referred to as “casks.” 
 For the average user, most installed packages will be casks.
 
-- `brew install --cask [package]`
+```
+brew install --cask [package]
+```
 
 ### Taps
 
@@ -88,8 +91,13 @@ A “Tap” is a third-party repository referenced by Homebrew.
 To install from a Tap, you need to add it as a reference. 
 Taps can house all types of packages, including formulae and casks.
 
-- `brew install [user]/[repo]/[package]`
-- `brew install --cask [user]/[repo]/[package]`
+```
+brew install [user]/[repo]/[package]
+```
+
+```
+brew install --cask [user]/[repo]/[package]
+```
 
 ## Finding Packages to Install
 
@@ -119,28 +127,45 @@ I do this once a week or so just to keep everything up to date.
 
 If you want more visibility and control, you can use more targeted commands.
 
-- List all packages installed on your system:
-  - `brew list`
+List all packages installed on your system:
 
-- Update all installed packages, and Homebrew itself:
-  1. `brew update`—Checks for available updates
-  2. `brew outdated`—Lists packages that have updates (optional)
-  3. `brew upgrade`—Installs all available updates
-- Update a single package:
-  1. `brew update`—Checks for available updates
-  2. `brew upgrade [package]`—Installs only the update specified
+```
+brew list
+```
 
-- Some casks have internal update systems and/or show “latest” to Homebrew instead of a version number (for example, Chrome or Firefox), so Homebrew does not know to update them. If you want to, you can force the upgrade:
-  - `brew upgrade --cask --greedy [package]`
+Update all installed packages, and Homebrew itself:
 
+```
+brew update    #Checks for available updates
+brew outdated  #Lists packages that have updates (optional)
+brew upgrade   #Installs all available updates
+```
 
-- Delete a package from your system:
-  - `brew uninstall [package]`
-- Clean your system of old and unneeded files:
+Update a single package:
 
-  - `brew cleanup`—Removes files older than 120 days
-  - `brew cleanup --prune=all`—Removes all old files and all caches of any age
+```
+brew update             #Checks for available updates
+brew upgrade [package]  #Installs only the update specified
+```
 
+Some casks have internal update systems and/or show “latest” to Homebrew instead of a version number (for example, Chrome or Firefox), so Homebrew does not know to update them. If you want to, you can force the upgrade:
+
+```
+brew upgrade --cask --greedy [package]
+```
+
+Delete a package from your system:
+
+```
+brew uninstall [package]
+```
+
+Clean your system of old and unneeded files:
+
+```
+brew cleanup               #Removes files older than 120 days
+brew cleanup --prune=all   #Removes old files and all caches of any age
+```
 
 ## GUI Tools
 
