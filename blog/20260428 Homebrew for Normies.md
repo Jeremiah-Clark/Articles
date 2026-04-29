@@ -43,9 +43,7 @@ Type your user password (the one you use to log in to macOS), and hit return.
 
 ![Terminal-Homebrew-Command](../images/Terminal-Homebrew-Command.png)
 
-![Terminal-Password](../images/Terminal-Password.png)
-
-> [TIP]
+> [!TIP]
 >
 > When the Terminal shows that little key in the cursor, typing won't appear to do anything. This is a security feature to prevent snooping when typing a password. Just type your password and hit return.
 
@@ -73,7 +71,7 @@ These are commonly utilities and libraries, most often originating on Linux or U
 brew install [package]
 ```
 
-> [NOTE]
+> [!NOTE]
 >
 > In all commands given, replace the word within the square brackets, and remove the square brackets as well. For example, “[package]” becomes “amp” to install the Amp terminal text editor.
 
