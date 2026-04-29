@@ -69,7 +69,9 @@ Homebrew calls install commands “formulae”.
 The most basic sort of formula simply invokes Homebrew, tells it to install, and then names the package. 
 These are commonly utilities and libraries, most often originating on Linux or Unix.
 
-- `brew install [package]`
+```
+brew install [package]
+```
 
 > [NOTE]
 >
@@ -165,6 +167,8 @@ Clean your system of old and unneeded files:
 ```
 brew cleanup              #Removes files older than 120 days
 ```
+
+Or a stronger version:
 
 ```
 brew cleanup --prune=all  #Removes old files and all caches
