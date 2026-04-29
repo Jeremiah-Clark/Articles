@@ -163,16 +163,16 @@ Delete a package from your system:
 brew uninstall [package]
 ```
 
-Clean your system of old and unneeded files:
+Clean your system of files older than 120 days:
 
 ```
-brew cleanup              #Removes files older than 120 days
+brew cleanup 
 ```
 
-Or a stronger version:
+Or a stronger version that removes old files and all caches:
 
 ```
-brew cleanup --prune=all  #Removes old files and all caches
+brew cleanup --prune=all 
 ```
 
 ## GUI Tools
