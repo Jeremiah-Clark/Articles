@@ -93,9 +93,10 @@
     var out = [], i = 0;
     while (i < lines.length) {
       var line = lines[i];
-      if (/^```/.test(line)) {
+      // Code fence: allow optional leading whitespace before the backticks
+      if (/^\s*```/.test(line)) {
         var code = []; i++;
-        while (i < lines.length && !/^```/.test(lines[i])) { code.push(lines[i]); i++; }
+        while (i < lines.length && !/^\s*```/.test(lines[i])) { code.push(lines[i]); i++; }
         i++;
         out.push('<pre><code>' + escapeHtml(code.join("\n")) + '</code></pre>');
         continue;
@@ -139,7 +140,7 @@
       while (i < lines.length &&
              !/^\s*$/.test(lines[i]) &&
              !/^#{1,6}\s+/.test(lines[i]) &&
-             !/^```/.test(lines[i]) &&
+             !/^\s*```/.test(lines[i]) &&
              !/^>\s?/.test(lines[i]) &&
              !/^\s*[-*+]\s+/.test(lines[i]) &&
              !/^\s*\d+\.\s+/.test(lines[i])) {
