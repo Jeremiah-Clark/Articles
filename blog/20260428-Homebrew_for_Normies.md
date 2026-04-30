@@ -12,8 +12,6 @@ It’s an alternative to the Mac App Store and to downloading directly from deve
 It is used extensively by developers, but everyday users can also benefit from what it offers. I’m targeting this post at the latter: 
 tech-savvy Mac users who are not developers but are interested in what Homebrew has to offer.
 
----
-
 ## Pros of Using Homebrew
 
 - **It’s fast**. Even large packages install, update, and uninstall quickly, often in seconds.
@@ -106,8 +104,6 @@ Or casks:
 brew install --cask [user]/[repo]/[package]
 ```
 
----
-
 ## Finding Packages to Install
 
 All of this raises the question of how you would know what is available and the exact command to use. 
@@ -119,8 +115,6 @@ Aside from articles (like [mine](https://medium.com/@jeremiah-clark/leaving-seta
 - **Homebrew Search**—Using the command `brew search [package]` returns every package that includes your search term, both Formulae and Casks. The search will also include third-party taps. Anything that is already installed will show as bold.
 
 ![Terminal-Homebrew-Search](../images/Terminal-Homebrew-Search.png)
-
----
 
 ## Maintaining Homebrew
 
